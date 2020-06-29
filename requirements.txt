@@ -1,0 +1,6 @@
+scrapy
+scrapy_user_agents
+scrapy_proxy_pool
+mysql-connector-python
+pymongo
+
