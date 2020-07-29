@@ -48,7 +48,7 @@ class ScrapyProjectPipeline(object):
 			return value_if_error
 
 		
-	############## Lưu trữ bằng sqlite3 ##############
+	############## Store in SQLite3 ##############
 	def create_sqlite_connection(self):
 		self.conn_sqlite = sqlite3.connect('sqlite_database.db')
 		self.curr_sqlite = self.conn_sqlite.cursor()
@@ -64,7 +64,7 @@ class ScrapyProjectPipeline(object):
 		self.conn_sqlite.commit()
 
 		
-	############### Lưu trữ bằng mysql ###############
+	############### Store in MySQL ###############
 	def create_mysql_connection(self):
 		self.conn_mysql = mysql.connector.connect(
 			host = 'localhost',
@@ -85,7 +85,7 @@ class ScrapyProjectPipeline(object):
 		self.conn_mysql.commit()
 	
 	
-	############## Lưu trữ bằng mongodb ##############
+	############## Store in MongoDB ##############
 	def create_mongodb_database(self):
 		self.conn_mongodb = pymongo.MongoClient('localhost', 27017)
 		db = self.conn_mongodb['mongodb_database']
