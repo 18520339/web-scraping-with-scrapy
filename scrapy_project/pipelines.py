@@ -1,10 +1,4 @@
 # -*- coding: utf-8 -*-
-
-# Define your item pipelines here
-#
-# Don't forget to add your pipeline to the ITEM_PIPELINES setting
-# See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-
 import sqlite3
 import mysql.connector
 import pymongo
@@ -19,7 +13,7 @@ class ScrapyProjectPipeline(object):
 
 		self.create_sqlite_connection()
 		self.create_sqlite_table()
-
+		
 		self.create_mysql_connection()
 		self.create_mysql_table()
 
@@ -42,10 +36,8 @@ class ScrapyProjectPipeline(object):
 
 	
 	def if_error(self, item, value_if_error):
-		try:
-			return item[0]
-		except:
-			return value_if_error
+		try: return item[0]
+		except: return value_if_error
 
 		
 	############## Store in SQLite3 ##############
